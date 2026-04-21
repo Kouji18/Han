@@ -150,12 +150,15 @@ function startAudioLoop(connection: VoiceConnection, guildId: string): AudioLoop
 // ── Voice connection management ────────────────────────────────────────────
 
 const client = new Client({
-  intents: [
+ intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildVoiceStates,
     GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent,
-  ],
+    GatewayIntentBits.MessageContent
+  ]
+});
+
+client.login(process.env.DISCORD_BOT_TOKEN);
   // Retry the gateway connection indefinitely on error — never give up.
   retryLimit: Infinity,
   // Fail silently on missing/unknown entities rather than throwing.
