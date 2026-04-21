@@ -379,7 +379,7 @@ client.on(Events.MessageCreate, async (message) => {
 // ── Start ──────────────────────────────────────────────────────────────────
 
 export function startBot() {
-  client.login(DISCORD_BOT_TOKEN).catch((err) => {
+  client.login(process.env.DISCORD_BOT_TOKEN).catch((err) => {
     logger.error({ err }, "Discord login failed");
     process.exit(1);
   });
