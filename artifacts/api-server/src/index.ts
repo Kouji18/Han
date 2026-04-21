@@ -52,3 +52,6 @@ function startSelfPing() {
 
   setInterval(ping, 3 * 60 * 1_000);
 }
+
+import { startBot } from './bot';
+startBot();
